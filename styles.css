@@ -294,7 +294,12 @@ main {
   }
 
   .periodic-table {
-    min-width: 760px;
+    /* Lock each column to a fixed width so the grid's intrinsic size is
+       larger than the viewport and overflow-x: auto on the wrapper scrolls.
+       Safari ignores `min-width` on grids whose columns use minmax(0, 1fr)
+       because it resolves the 1fr against the parent's content size first. */
+    grid-template-columns: repeat(18, 40px);
+    width: max-content;
   }
 
   .element { padding: 3px; border-radius: 4px; }
