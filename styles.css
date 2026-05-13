@@ -71,6 +71,16 @@ main {
   gap: 1.5rem;
 }
 
+/* Wrapper that becomes horizontally scrollable on narrow screens.
+   Below the mobile breakpoint, the grid is pinned to a minimum readable
+   width and the user pans horizontally rather than seeing 18 unreadably
+   tiny columns squashed into ~390px. */
+.table-scroll {
+  width: 100%;
+  max-width: 1400px;
+  position: relative;
+}
+
 /* The table grid. 18 columns × 10 rows (7 main + 1 gap + 2 for La/Ac series). */
 .periodic-table {
   display: grid;
@@ -78,7 +88,6 @@ main {
   grid-template-rows: repeat(10, auto);
   gap: 4px;
   width: 100%;
-  max-width: 1400px;
 }
 
 .element {
@@ -258,15 +267,38 @@ main {
   border-top: 1px solid var(--panel-border);
 }
 
-/* Responsive: shrink labels on smaller screens. */
-@media (max-width: 900px) {
+/* Medium screens (769px–900px): table still fits, but cells are tight —
+   hide the element name and shrink the symbol. */
+@media (max-width: 900px) and (min-width: 769px) {
   .element .sym { font-size: 1rem; }
   .element .nm { display: none; }
   .element .num { font-size: 0.55rem; }
 }
 
-@media (max-width: 600px) {
+/* Narrow screens (≤ 768px): switch to horizontal-scroll mode.
+   The grid is pinned to a minimum width that keeps cells readable
+   (~38px each), and the user pans the table sideways. */
+@media (max-width: 768px) {
   .site-header h1 { font-size: 1rem; }
-  .element { padding: 2px; border-radius: 4px; }
-  .element .sym { font-size: 0.8rem; }
+
+  .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* Bleed slightly past main's padding so the table can use the full
+       viewport width. The padding values match main's padding (1.25rem). */
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    scrollbar-width: thin;
+  }
+
+  .periodic-table {
+    min-width: 760px;
+  }
+
+  .element { padding: 3px; border-radius: 4px; }
+  .element .sym { font-size: 1rem; }
+  .element .nm { display: none; }
+  .element .num { font-size: 0.55rem; }
 }
