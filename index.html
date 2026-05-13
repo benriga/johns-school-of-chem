@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive Periodic Table</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Interactive Periodic Table</h1>
+    <div class="controls">
+      <input
+        id="search"
+        type="search"
+        placeholder="Search by name, symbol, or number"
+        autocomplete="off"
+      />
+    </div>
+  </header>
+
+  <main>
+    <section id="table" class="periodic-table" aria-label="Periodic table of elements">
+      <!-- Cells injected by app.js -->
+    </section>
+
+    <section class="legend" aria-label="Category legend">
+      <!-- Legend injected by app.js -->
+    </section>
+  </main>
+
+  <aside id="details" class="details-panel" hidden aria-live="polite">
+    <button class="close" id="details-close" aria-label="Close details">&times;</button>
+    <div class="details-content"></div>
+  </aside>
+
+  <footer class="site-footer">
+    <p>Built as a learning project — data sourced from public references.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
