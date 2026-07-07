@@ -8,6 +8,11 @@ no build step, so it can be served directly from GitHub Pages. Future
 iterations may rebuild this as native iOS (Swift/SwiftUI) and Android (Kotlin)
 apps.
 
+## Run on Github
+
+<https://benriga.github.io/johns-school-of-chem/>
+
+
 ## Run locally
 
 It's a static site, so any local web server works. From the project root:
