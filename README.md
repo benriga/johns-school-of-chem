@@ -3,15 +3,20 @@
 A simple, static web app that renders all 118 elements as a clickable periodic
 table. Click an element for details; filter the table with the search box.
 
+<p align="center">
+  <a href="https://benriga.github.io/johns-school-of-chem/">
+    <img src="https://img.shields.io/badge/%E2%96%B6%20Try%20it%20live-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Try it live on GitHub Pages" height="44" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://benriga.github.io/johns-school-of-chem/">benriga.github.io/johns-school-of-chem</a>
+</p>
+
 This is the **first pass** — a web prototype written in plain HTML/CSS/JS with
 no build step, so it can be served directly from GitHub Pages. Future
 iterations may rebuild this as native iOS (Swift/SwiftUI) and Android (Kotlin)
 apps.
-
-## Run on Github
-
-<https://benriga.github.io/johns-school-of-chem/>
-
 
 ## Run locally
 
